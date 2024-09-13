@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Chemistry Simulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .experiment {
+      margin: 20px;
+    }
+    .controls {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    label, select, input {
+      margin: 5px 0;
+    }
+    button {
+      margin-top: 10px;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Chemistry Experiment Simulation</h1>
+    <div class="experiment">
+      <h3>Select an Experiment</h3>
+      <select id="experimentSelect">
+        <option value="neutralization">Neutralization (Acid-Base Reaction)</option>
+        <option value="precipitation">Precipitation Reaction</option>
+        <option value="combustion">Combustion Reaction</option>
+        <option value="electrolysis">Electrolysis</option>
+        <option value="displacement">Displacement Reaction</option>
+      </select>
+    </div>
+
+    <div class="controls">
+      <label for="chemical1">Chemical 1</label>
+      <input type="text" id="chemical1" value="HCl">
+      
+      <label for="chemical2">Chemical 2</label>
+      <input type="text" id="chemical2" value="NaOH">
+
+      <label for="ratio">Ratio (Chemical 1: Chemical 2)</label>
+      <input type="text" id="ratio" value="1:1">
+
+      <label for="concentration">Concentration (%)</label>
+      <input type="text" id="concentration" value="0.1">
+    </div>
+
+    <button onclick="simulate()">Simulate</button>
+
+    <div class="result" id="result"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
